@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tires + Tools | Buford, GA — Tires, Wheels, Tools &amp; Equipment</title>
+<meta name="description" content="Tires + Tools in Buford, GA — new &amp; used tires any brand, mounting &amp; balancing, wheel repair, and sales/service on tools, compressors, generators &amp; spray equipment. Se habla Español.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181a;
+    --ink-soft:#2b3034;
+    --steel:#4a5157;
+    --paper:#f3f0e8;
+    --paper-dim:#e8e3d6;
+    --yellow:#f4c51e;
+    --green:#7ab63c;
+    --green-deep:#4c7a22;
+    --red:#c8402c;
+    --white:#ffffff;
+    --line: rgba(21,24,26,0.12);
+    --line-dark: rgba(243,240,232,0.14);
+    --radius: 3px;
+    --maxw: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{
+    font-family:'Oswald', sans-serif;
+    margin:0 0 0.4em 0;
+    line-height:1.08;
+    font-weight:600;
+    letter-spacing:0.2px;
+  }
+  p{margin:0 0 1em 0;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  section{position:relative;}
+
+  /* photo treatment: unify mixed-quality shop photos with a warm duotone + grit overlay */
+  .photo{
+    position:relative;
+    overflow:hidden;
+    background:var(--ink);
+    isolation:isolate;
+  }
+  .photo img{
+    width:100%; height:100%; object-fit:cover;
+    filter:saturate(0.85) contrast(1.08) brightness(0.98);
+    transform:scale(1.01);
+  }
+  .photo::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(115deg, rgba(21,24,26,0.05) 0 2px, transparent 2px 4px),
+      linear-gradient(180deg, rgba(21,24,26,0.06), rgba(21,24,26,0.22));
+    mix-blend-mode:multiply;
+    pointer-events:none;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--ink);
+    border-bottom:3px solid var(--yellow);
+  }
+  .headbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 24px;
+    max-width:var(--maxw); margin:0 auto;
+    gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand svg{width:38px; height:38px; flex:none;}
+  .brand-text{color:var(--white); font-family:'Oswald',sans-serif; line-height:1;}
+  .brand-text .l1{font-size:20px; font-weight:700; letter-spacing:0.5px;}
+  .brand-text .l2{font-size:11px; color:var(--yellow); letter-spacing:2px; font-weight:500;}
+  nav{display:flex; gap:28px;}
+  nav a{
+    color:var(--paper); text-decoration:none; font-size:15px; font-weight:500;
+    border-bottom:2px solid transparent; padding-bottom:2px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  nav a:hover{border-color:var(--yellow); color:var(--yellow);}
+  .head-cta{
+    display:flex; align-items:center; gap:14px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.3px;
+    text-decoration:none; padding:11px 20px; border-radius:var(--radius);
+    font-size:15px; border:2px solid transparent; cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-yellow{background:var(--yellow); color:var(--ink);}
+  .btn-yellow:hover{box-shadow:0 3px 0 var(--green-deep);}
+  .btn-outline{background:transparent; color:var(--paper); border-color:var(--line-dark);}
+  .btn-outline:hover{border-color:var(--yellow); color:var(--yellow);}
+  .btn-green{background:var(--green); color:var(--ink);}
+  .nav-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(21,24,26,0.94), rgba(21,24,26,0.97)),
+      repeating-linear-gradient(135deg, #1b1f22 0 26px, #191c1e 26px 52px);
+    color:var(--paper);
+    padding:76px 0 84px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--yellow); font-weight:600; font-size:13px;
+    letter-spacing:1.5px; margin-bottom:18px;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:var(--yellow); display:inline-block;}
+  .hero h1{
+    color:var(--white); font-size:52px; max-width:11.5em;
+  }
+  .hero h1 em{color:var(--yellow); font-style:normal;}
+  .hero .lede{
+    font-size:18px; color:#cfd3d5; max-width:34em; margin-top:16px;
+  }
+  .hero-ctas{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;}
+  .trust-row{
+    margin-top:34px; display:flex; align-items:center; gap:14px;
+    color:#b9bec1; font-size:14px;
+  }
+  .stars{color:var(--yellow); letter-spacing:2px; font-size:16px;}
+  .trust-row strong{color:var(--white);}
+  .hero-photo{
+    position:relative;
+  }
+  .hero-photo .frame{
+    border:6px solid var(--paper); border-radius:2px;
+    box-shadow:0 22px 46px rgba(0,0,0,0.45);
+    transform:rotate(1.4deg);
+    aspect-ratio:4/3.2;
+  }
+  .hero-photo .badge{
+    position:absolute; left:-18px; bottom:-18px;
+    background:var(--yellow); color:var(--ink);
+    font-family:'Oswald',sans-serif; font-weight:700; font-size:14px;
+    padding:12px 16px; border-radius:2px; max-width:220px;
+    transform:rotate(-2deg);
+    box-shadow:0 8px 18px rgba(0,0,0,0.35);
+    line-height:1.2;
+  }
+
+  /* ---------- section headings ---------- */
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head .kicker{
+    color:var(--green-deep); font-weight:600; font-size:13px; letter-spacing:1.5px;
+    display:flex; align-items:center; gap:8px; margin-bottom:10px;
+  }
+  .section-head .kicker::before{content:""; width:22px; height:2px; background:var(--green-deep);}
+  .section-head h2{font-size:36px;}
+  .on-dark .section-head .kicker,
+  .on-dark .section-head .kicker::before{color:var(--yellow); background:var(--yellow);}
+  .on-dark .section-head h2{color:var(--white);}
+
+  /* ---------- services ---------- */
+  .services{padding:88px 0;}
+  .service-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--paper); padding:30px 26px; display:flex; flex-direction:column; gap:14px;
+  }
+  .service-card .icon{
+    width:44px; height:44px; color:var(--green-deep);
+  }
+  .service-card h3{font-size:19px;}
+  .service-card p{font-size:14.5px; color:var(--steel); margin:0;}
+
+  /* ---------- work in the bay ---------- */
+  .bay{
+    background:var(--ink); color:var(--paper); padding:88px 0;
+  }
+  .bay-grid{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:22px;
+  }
+  .bay-main .photo{aspect-ratio:16/11.5; border-radius:2px;}
+  .bay-side{display:grid; grid-template-rows:1fr 1fr; gap:22px;}
+  .bay-side .photo{aspect-ratio:16/7.3; border-radius:2px;}
+  .cap{
+    margin-top:12px; font-size:14px; color:#b9bec1;
+    display:flex; justify-content:space-between; gap:12px;
+  }
+  .cap b{color:var(--white); font-weight:600;}
+
+  /* ---------- inventory / inside the shop ---------- */
+  .inside{padding:88px 0;}
+  .inside-grid{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:16px;
+  }
+  .inside-grid .photo{aspect-ratio:3/4; border-radius:2px;}
+  .inside-grid figure{margin:0;}
+  .inside-grid figcaption{
+    margin-top:10px; font-size:13.5px; color:var(--steel); font-weight:500;
+  }
+  .inside-note{
+    margin-top:38px; padding:22px 26px; background:var(--paper-dim);
+    border-left:4px solid var(--green-deep); font-size:15px; color:var(--ink-soft);
+    display:flex; gap:18px; align-items:flex-start; flex-wrap:wrap; justify-content:space-between;
+  }
+
+  /* ---------- builds / customer wheels ---------- */
+  .builds{
+    background:var(--paper-dim); padding:88px 0;
+  }
+  .builds-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  }
+  .builds-grid .photo{aspect-ratio:4/3.6; border-radius:2px;}
+  .build-tag{
+    position:absolute; top:14px; left:14px; z-index:2;
+    background:var(--yellow); color:var(--ink); font-family:'Oswald',sans-serif;
+    font-weight:700; font-size:12.5px; letter-spacing:0.5px;
+    padding:6px 10px; border-radius:2px;
+  }
+
+  /* ---------- reviews ---------- */
+  .reviews{padding:88px 0;}
+  .reviews-top{
+    display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    margin-bottom:44px;
+  }
+  .rating-block{display:flex; align-items:center; gap:18px;}
+  .rating-num{font-family:'Oswald',sans-serif; font-size:56px; font-weight:700; line-height:1;}
+  .rating-meta{font-size:14px; color:var(--steel);}
+  .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .review-card{
+    background:var(--white); border:1px solid var(--line); border-radius:2px;
+    padding:26px; display:flex; flex-direction:column; gap:14px;
+  }
+  .review-card .stars{font-size:14px;}
+  .review-card p{font-size:15.5px; color:var(--ink-soft); margin:0; font-style:italic;}
+  .review-who{display:flex; align-items:center; gap:10px; margin-top:auto;}
+  .avatar{
+    width:34px; height:34px; border-radius:50%; background:var(--green);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Oswald',sans-serif; font-weight:700; color:var(--ink); font-size:14px; flex:none;
+  }
+  .review-who .name{font-weight:600; font-size:14px;}
+  .review-who .src{font-size:12.5px; color:var(--steel);}
+
+  /* ---------- location ---------- */
+  .location{background:var(--ink); color:var(--paper); padding:88px 0;}
+  .loc-grid{display:grid; grid-template-columns:0.95fr 1.05fr; gap:56px; align-items:start;}
+  .info-row{
+    display:flex; gap:16px; padding:18px 0; border-bottom:1px solid var(--line-dark);
+  }
+  .info-row:first-of-type{border-top:1px solid var(--line-dark);}
+  .info-row svg{width:22px; height:22px; flex:none; color:var(--yellow); margin-top:2px;}
+  .info-row .label{font-size:12.5px; letter-spacing:1px; color:#9aa0a3; margin-bottom:4px; font-weight:600;}
+  .info-row .value{font-size:16px; color:var(--white);}
+  .info-row .value a{color:var(--yellow); text-decoration:none;}
+  .hours-table{width:100%; border-collapse:collapse; margin-top:6px; font-size:15px;}
+  .hours-table td{padding:4px 0; color:var(--white);}
+  .hours-table td:last-child{text-align:right; color:#cfd3d5;}
+  .hours-note{font-size:12.5px; color:#9aa0a3; margin-top:8px;}
+  .loc-photo .photo{aspect-ratio:16/12; border-radius:2px; margin-bottom:18px;}
+  .map-frame{
+    border:0; width:100%; height:280px; border-radius:2px; filter:grayscale(0.15) contrast(1.05);
+  }
+  .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;}
+  .badge-pill{
+    border:1px solid var(--line-dark); color:var(--paper); font-size:13px;
+    padding:7px 13px; border-radius:20px; font-weight:500;
+  }
+
+  /* ---------- footer ---------- */
+  footer{background:#0f1112; color:#9aa0a3; padding:48px 0 26px;}
+  .foot-grid{display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; padding-bottom:28px; border-bottom:1px solid var(--line-dark);}
+  .foot-brand{display:flex; align-items:center; gap:10px;}
+  .foot-brand svg{width:30px; height:30px;}
+  .foot-brand span{color:var(--white); font-family:'Oswald',sans-serif; font-weight:700; font-size:17px;}
+  .foot-links{display:flex; gap:26px; flex-wrap:wrap;}
+  .foot-links a{text-decoration:none; color:#c7cbcd; font-size:14.5px;}
+  .foot-links a:hover{color:var(--yellow);}
+  .foot-social{display:flex; gap:14px;}
+  .foot-social a{
+    width:36px; height:36px; border:1px solid var(--line-dark); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+  }
+  .foot-social svg{width:16px; height:16px; color:var(--paper);}
+  .foot-social a:hover{border-color:var(--yellow);}
+  .foot-bottom{
+    display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    padding-top:20px; font-size:13px;
+  }
+
+  /* sticky mobile call bar */
+  .call-bar{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--yellow); display:none;
+    align-items:center; justify-content:center; gap:10px;
+    padding:13px; font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:0.3px;
+    text-decoration:none; color:var(--ink); font-size:15px;
+    box-shadow:0 -6px 18px rgba(0,0,0,0.25);
+  }
+
+  @media (max-width: 980px){
+    nav{display:none;}
+    .hero .wrap{grid-template-columns:1fr; gap:44px;}
+    .hero h1{font-size:38px;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .bay-grid{grid-template-columns:1fr;}
+    .bay-side{grid-template-rows:1fr; grid-template-columns:1fr 1fr;}
+    .inside-grid{grid-template-columns:repeat(2,1fr);}
+    .builds-grid{grid-template-columns:1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .loc-grid{grid-template-columns:1fr;}
+    .call-bar{display:flex;}
+    body{padding-bottom:58px;}
+    .head-cta .btn-outline{display:none;}
+  }
+  @media (max-width: 600px){
+    .hero{padding:52px 0 60px;}
+    .hero h1{font-size:32px;}
+    .section-head h2{font-size:28px;}
+    .service-grid{grid-template-columns:1fr;}
+    .inside-grid{grid-template-columns:1fr 1fr;}
+    .foot-grid{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="headbar">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="#F4C51E" stroke-width="3"/>
+        <circle cx="24" cy="24" r="7" fill="#7AB63C"/>
+        <circle cx="24" cy="12.5" r="2.6" fill="#F4C51E"/>
+        <circle cx="24" cy="35.5" r="2.6" fill="#F4C51E"/>
+        <circle cx="12.5" cy="24" r="2.6" fill="#F4C51E"/>
+        <circle cx="35.5" cy="24" r="2.6" fill="#F4C51E"/>
+      </svg>
+      <span class="brand-text"><span class="l1">TIRES + TOOLS</span><br><span class="l2">BUFORD, GA</span></span>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#shop">The Shop</a>
+      <a href="#builds">Builds</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
+    </nav>
+    <div class="head-cta">
+      <a class="btn btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=1955+Buford+Hwy+NE+Ste+C,+Buford,+GA+30518" target="_blank" rel="noopener">Directions</a>
+      <a class="btn btn-yellow" href="tel:+16785415010">Call (678) 541-5010</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Buford Hwy · Walk-ins welcome</span>
+      <h1>Tires, wheels &amp; tools —<br>fixed right, <em>same day</em>, any brand.</h1>
+      <p class="lede">A family-run shop on Buford Hwy for new &amp; used tires, mounting and balancing, wheel repair, and sales/service on the tools and equipment that keep your work moving — compressors, generators, and spray machines.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-yellow" href="tel:+16785415010">Call the Shop</a>
+        <a class="btn btn-outline" style="color:var(--paper); border-color:var(--line-dark);" href="https://www.google.com/maps/dir/?api=1&destination=1955+Buford+Hwy+NE+Ste+C,+Buford,+GA+30518" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+      <div class="trust-row">
+        <span class="stars">★★★★★</span>
+        <span><strong>4.8</strong> from 97 Google reviews · Se habla Español · Free estimates</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame photo">
+        <img src="images/build-civic-2.jpg" alt="Customer's hatchback fitted with aftermarket wheels, serviced at Tires + Tools">
+      </div>
+      <div class="badge">Custom wheel &amp; tire fitment — done in-house</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">What we do</span>
+      <h2>Everything on four wheels — and the tools behind it</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="17" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M24 7v8M24 33v8M41 24h-8M15 24H7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>New &amp; Used Tires</h3>
+        <p>Any brand, any budget. We stock a rotating floor of quality used tires alongside new — mounted and balanced while you wait.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="20" width="36" height="10" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M14 20v-4a4 4 0 014-4h12a4 4 0 014 4v4" stroke="currentColor" stroke-width="2.5"/><circle cx="14" cy="34" r="3" fill="currentColor"/><circle cx="34" cy="34" r="3" fill="currentColor"/></svg>
+        <h3>Mounting &amp; Balancing</h3>
+        <p>Computer wheel balancing on every set, plus curb rash and wheel repair to get bent or scraped rims back in shape.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8l-4 4 8 8 4-4-8-8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M27 13L10 30a3 3 0 000 4l4 4a3 3 0 004 0l17-17" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M8 40l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Tools &amp; Equipment</h3>
+        <p>Sales and service on compressors, generators, and spray machines — plus the everyday tools that keep a job site running.</p>
+      </div>
+      <div class="service-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="9" y="16" width="30" height="18" rx="2" stroke="currentColor" stroke-width="2.5"/><path d="M16 16v-3a3 3 0 013-3h10a3 3 0 013 3v3" stroke="currentColor" stroke-width="2.5"/><circle cx="16" cy="25" r="2.4" fill="currentColor"/><circle cx="24" cy="25" r="2.4" fill="currentColor"/><circle cx="32" cy="25" r="2.4" fill="currentColor"/></svg>
+        <h3>Small Engine Service</h3>
+        <p>Repairs and tune-ups on generators and small engines — we keep a full bench of working units in stock.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IN THE BAY ============ -->
+<section class="bay" id="bay">
+  <div class="wrap">
+    <div class="section-head on-dark">
+      <span class="kicker">In the bay</span>
+      <h2>Work you can watch happen</h2>
+    </div>
+    <div class="bay-grid">
+      <div class="bay-main">
+        <div class="photo"><img src="images/tech-working.jpg" alt="Two Tires + Tools technicians servicing a sedan's tire in the shop bay"></div>
+        <div class="cap"><span><b>Tire &amp; wheel service</b> — our bay, most jobs same day</span></div>
+      </div>
+      <div class="bay-side">
+        <div>
+          <div class="photo"><img src="images/curb-rash-1.jpg" alt="Wheel with curb rash before repair"></div>
+          <div class="cap"><span><b>Curb rash &amp; wheel repair</b></span></div>
+        </div>
+        <div>
+          <div class="photo"><img src="images/van.jpg" alt="Tires + Tools branded service van"></div>
+          <div class="cap"><span><b>Mobile estimates</b> — call ahead</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIDE THE SHOP ============ -->
+<section class="inside" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Inside the shop</span>
+      <h2>A tire wall deep enough for any brand</h2>
+    </div>
+    <div class="inside-grid">
+      <figure>
+        <div class="photo"><img src="images/tire-wall.jpg" alt="Rows of tires stocked on warehouse racking"></div>
+        <figcaption>Tire stock, all sizes</figcaption>
+      </figure>
+      <figure>
+        <div class="photo"><img src="images/shop-shelf-2.jpg" alt="Shop floor shelving with tools and supplies"></div>
+        <figcaption>Retail floor &amp; parts</figcaption>
+      </figure>
+      <figure>
+        <div class="photo"><img src="images/engines.jpg" alt="Rack of small engines including generators and pressure washers"></div>
+        <figcaption>Generators &amp; small engines</figcaption>
+      </figure>
+      <figure>
+        <div class="photo"><img src="images/balancer.jpg" alt="Computerized wheel balancing machine"></div>
+        <figcaption>Computer wheel balancer</figcaption>
+      </figure>
+      <figure>
+        <div class="photo"><img src="images/shop-shelf-1.jpg" alt="Shelving with oil, fluids and tools"></div>
+        <figcaption>Fluids &amp; supplies</figcaption>
+      </figure>
+    </div>
+    <div class="inside-note">
+      <span><strong>Tools, Repairs &amp; Service:</strong> compressors, generators, spray machines. <strong>Used &amp; new tires:</strong> mounting &amp; balancing, any brand.</span>
+      <span><strong>(678) 925-9313</strong> &nbsp;/&nbsp; <strong>(678) 541-5010</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTOMER BUILDS ============ -->
+<section class="builds" id="builds">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Customer rides</span>
+      <h2>Fitment work from around Buford</h2>
+    </div>
+    <div class="builds-grid">
+      <div style="position:relative;">
+        <span class="build-tag">Aftermarket set</span>
+        <div class="photo"><img src="images/build-civic-3.jpg" alt="Silver hatchback with aftermarket wheels, driveway"></div>
+      </div>
+      <div style="position:relative;">
+        <span class="build-tag">Fresh mount &amp; balance</span>
+        <div class="photo"><img src="images/build-civic-1.jpg" alt="Silver hatchback parked in driveway after tire service"></div>
+      </div>
+      <div style="position:relative;">
+        <span class="build-tag">Lowered fitment</span>
+        <div class="photo"><img src="images/build-civic-2.jpg" alt="Silver hatchback with lowered stance and aftermarket wheels"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-top">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="kicker">Word around town</span>
+        <h2>What customers say</h2>
+      </div>
+      <div class="rating-block">
+        <div class="rating-num">4.8</div>
+        <div class="rating-meta">out of 5<br>97 Google reviews</div>
+      </div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>"Excellent service, great prices, fabulous people!"</p>
+        <div class="review-who">
+          <div class="avatar">C</div>
+          <div><div class="name">Cathi Gomez</div><div class="src">Google review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>"The staff was friendly, professional, and made me feel like a valued customer."</p>
+        <div class="review-who">
+          <div class="avatar">A</div>
+          <div><div class="name">Alejandro Castrillon</div><div class="src">Google review</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>"The customer service and pricing is great, I love getting my services done here."</p>
+        <div class="review-who">
+          <div class="avatar">V</div>
+          <div><div class="name">Victor Vargas</div><div class="src">Google review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="location" id="location">
+  <div class="wrap">
+    <div class="section-head on-dark">
+      <span class="kicker">Find us</span>
+      <h2>On Buford Hwy, next to About Window Tinting</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-info">
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-7.58 7-12.5A7 7 0 105 9.5C5 14.42 12 22 12 22z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+          <div><div class="label">ADDRESS</div><div class="value">1955 Buford Hwy NE, Ste C<br>Buford, GA 30518</div></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5c0 8.28 6.72 15 15 15l3-4-6-3-2 2c-2.4-1.2-4.8-3.6-6-6l2-2-3-6-4 0z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <div><div class="label">PHONE</div><div class="value"><a href="tel:+16785415010">(678) 541-5010</a> — shop<br><a href="tel:+16789259313">(678) 925-9313</a> — mobile / estimates</div></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <div style="flex:1;">
+            <div class="label">HOURS</div>
+            <table class="hours-table">
+              <tr><td>Monday</td><td>6:00 AM – 6:00 PM</td></tr>
+              <tr><td>Tuesday – Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+              <tr><td>Saturday</td><td>8:00 AM – 4:00 PM</td></tr>
+              <tr><td>Sunday</td><td>Closed</td></tr>
+            </table>
+            <div class="hours-note">Confirmed open 6:00 AM Monday via Google — please double-check remaining hours and update this table to match your posted schedule.</div>
+          </div>
+        </div>
+        <div class="badges">
+          <span class="badge-pill">Se habla Español</span>
+          <span class="badge-pill">Free estimates</span>
+          <span class="badge-pill">Walk-ins welcome</span>
+          <span class="badge-pill">Any tire brand</span>
+        </div>
+      </div>
+      <div class="loc-photo">
+        <div class="photo"><img src="images/storefront.jpg" alt="Tires + Tools storefront on Buford Highway"></div>
+        <iframe class="map-frame" loading="lazy" title="Map to Tires + Tools"
+          src="https://www.google.com/maps?q=1955+Buford+Hwy+NE+Ste+C,+Buford,+GA+30518&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="#F4C51E" stroke-width="3"/>
+          <circle cx="24" cy="24" r="7" fill="#7AB63C"/>
+        </svg>
+        <span>TIRES + TOOLS</span>
+      </div>
+      <div class="foot-links">
+        <a href="#services">Services</a>
+        <a href="#shop">The Shop</a>
+        <a href="#builds">Builds</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+      </div>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/tirestools/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/jpstirestools/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.7c0-.5.2-.7.5-.7z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@tirestools" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 4c.4 2 1.9 3.5 4 3.8v2.7c-1.5-.1-2.9-.6-4-1.5v5.7a4.8 4.8 0 11-4.8-4.8c.3 0 .6 0 .8.1v2.7a2.1 2.1 0 102.1 2.1V4h1.9z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Tires + Tools · 1955 Buford Hwy NE Ste C, Buford, GA 30518</span>
+      <span>Site built for Tires + Tools</span>
+    </div>
+  </div>
+</footer>
+
+<a class="call-bar" href="tel:+16785415010">Call (678) 541-5010</a>
+
+</body>
+</html>
